@@ -1,12 +1,37 @@
 package br.edu.infnet.apppetshop.model.domain;
 
 public class Tosa extends Servico {
-	public boolean higienica;
-	public String estilo;
-	public boolean aparar;
+	private boolean higienica;
+	private String estilo;
+	private boolean aparar;
 	
 	@Override
 	public String toString() {
-		return estilo + ";" + higienica + ";" + aparar;
+		return super.toString() + ";" + estilo + ";" + higienica + ";" + aparar;
 	}
+
+	public boolean isHigienica() {
+		return higienica;
+	}
+
+	public void setHigienica(boolean higienica) {
+		this.higienica = higienica;
+	}
+
+	public String getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(String estilo) {
+		this.estilo = estilo;
+	}
+
+	public boolean isAparar() {
+		return aparar;
+	}
+
+	public void setAparar(boolean aparar) {
+		this.aparar = aparar;
+	}
+	
 }

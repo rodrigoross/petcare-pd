@@ -14,21 +14,21 @@ public class DonoTeste implements ApplicationRunner {
 		System.out.println("## Cadastro de donos ###################");
 		
 		Dono d1 = new Dono();
-		d1.nome = "Jurema da Silva";
-		d1.cpf = "77522553008";
-		d1.telefone = "+5565981726586";
+		d1.setNome("Jurema da Silva");
+		d1.setCpf("77522553008");
+		d1.setTelefone("+5565981726586");
 		System.out.println("Dono - " + d1);
 		
 		Dono d2 = new Dono();
-		d2.nome = "Baltazar dos Santos";
-		d2.cpf = "75459728053";
-		d2.telefone = "+5565972816586";
+		d2.setNome("Baltazar dos Santos");
+		d2.setCpf("75459728053");
+		d2.setTelefone("+5565972816586");
 		System.out.println("Dono - " + d2);
 		
 		Dono d3 = new Dono();
-		d3.nome = "Paula Tejano";
-		d3.cpf = "04402606047";
-		d3.telefone = "+5565981728665";
+		d3.setNome("Paula Tejano");
+		d3.setCpf("04402606047");
+		d3.setTelefone("+5565981728665");
 		System.out.println("Dono - " + d3);
 	}
 

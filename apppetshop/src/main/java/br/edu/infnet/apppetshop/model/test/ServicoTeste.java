@@ -4,32 +4,45 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppetshop.model.domain.Servico;
+import br.edu.infnet.apppetshop.model.domain.Banho;
+import br.edu.infnet.apppetshop.model.domain.Consulta;
+import br.edu.infnet.apppetshop.model.domain.PorteAnimal;
+import br.edu.infnet.apppetshop.model.domain.Tosa;
 
 @Component
-public class ServicoTeste implements ApplicationRunner{
+public class ServicoTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		Servico s1 = new Servico();
-		s1.codigo = 123;
-		s1.valor = 100;
-		s1.nome = "Banho & Tosa";
-		s1.animal = "Cadela";
-		System.out.println("Servico - " + s1);
+
+		Banho b1 = new Banho();
+		b1.setCodigo(123);
+		b1.setValor(90);
+		b1.setNome("Banho & Tosa");
+		b1.setAnimal("Cadela");
+		b1.setEscovacao(true);
+		b1.setPorte(PorteAnimal.GRANDE);
+		b1.setObservacao("Alergia ao shampoo x");
+		System.out.println("Banho - " + b1);
 		
-		Servico s2 = new Servico();
-		s2.codigo = 456;
-		s2.valor = 75;
-		s2.nome = "Tosa";
-		s2.animal = "Cão";
-		System.out.println("Servico - " + s2);
-		
-		Servico s3 = new Servico();
-		s3.codigo = 789;
-		s3.valor = 145;
-		s3.nome = "Consulta";
-		s3.animal = "Gato";
-		System.out.println("Servico - " + s3);
+		Consulta c1 = new Consulta();
+		c1.setCodigo(456);
+		c1.setValor(75);
+		c1.setNome("Consulta rotineira");
+		c1.setAnimal("Cão");
+		c1.setVacina(false);;
+		c1.setPeso(4);
+		c1.setRaca("Yorkshire Terrier");
+		System.out.println("Consulta - " + c1);
+
+		Tosa t1 = new Tosa();
+		t1.setCodigo(789);
+		t1.setValor(25);
+		t1.setNome("Aparar garras");
+		t1.setAnimal("Gato");
+		t1.setHigienica(false);
+		t1.setAparar(true);
+		t1.setEstilo("Garras curtas");
+		System.out.println("Tosa - " + t1);
 	}
 }

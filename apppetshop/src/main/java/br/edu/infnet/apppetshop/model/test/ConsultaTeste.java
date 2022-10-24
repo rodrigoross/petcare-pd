@@ -14,21 +14,33 @@ public class ConsultaTeste implements ApplicationRunner{
 		System.out.println("## Cadastro de Consultas ###################");
 		
 		Consulta c1 = new Consulta();
-		c1.vacina = false;
-		c1.peso = 4;
-		c1.raca = "Yorkshire Terrier";
+		c1.setCodigo(456);
+		c1.setValor(75);
+		c1.setNome("Consulta rotineira");
+		c1.setAnimal("Cão");
+		c1.setVacina(false);;
+		c1.setPeso(4);
+		c1.setRaca("Yorkshire Terrier");
 		System.out.println("Consulta - " + c1);
 		
 		Consulta c2 = new Consulta();
-		c2.vacina = true;
-		c2.peso = (float) 1.5;
-		c2.raca = "Pinscher";
+		c2.setCodigo(654);
+		c2.setValor(150);
+		c2.setNome("Vacinação");
+		c2.setAnimal("Cão");
+		c2.setVacina(true);
+		c2.setPeso((float)1.5);
+		c2.setRaca("Pinscher");
 		System.out.println("Consulta - " + c2);
 		
 		Consulta c3 = new Consulta();
-		c3.vacina = false;
-		c3.peso = (float) 2.450;
-		c3.raca = "Pug";
+		c3.setCodigo(655);
+		c3.setValor(75);
+		c3.setNome("Inspeção");
+		c3.setAnimal("Cão");
+		c3.setVacina(false);
+		c3.setPeso((float) 2.450);
+		c3.setRaca("Pug");
 		System.out.println("Consulta - " + c3);
 	
 	}

@@ -8,29 +8,40 @@ import br.edu.infnet.apppetshop.model.domain.Banho;
 import br.edu.infnet.apppetshop.model.domain.PorteAnimal;
 
 @Component
-public class BanhoTeste implements ApplicationRunner{
+public class BanhoTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("## Cadastro de Banhos ###################");
-		
+
 		Banho b1 = new Banho();
-		b1.escovacao = true;
-		b1.porte = PorteAnimal.GRANDE;
-		b1.observacao = "Alergia ao shampoo x";
+		b1.setCodigo(123);
+		b1.setValor(90);
+		b1.setNome("Banho & Tosa");
+		b1.setAnimal("Cadela");
+		b1.setEscovacao(true);
+		b1.setPorte(PorteAnimal.GRANDE);
+		b1.setObservacao("Alergia ao shampoo x");
 		System.out.println("Banho - " + b1);
-		
+
 		Banho b2 = new Banho();
-		b2.escovacao = false;
-		b2.porte =  PorteAnimal.MINI;
-		b2.observacao = "Tosa";
-		b2.animal = "Ferida aberta na pata dianteira direita";
+		b2.setCodigo(321);
+		b2.setValor(120);
+		b2.setNome("Banho & Tosa");
+		b2.setAnimal("Cão");
+		b2.setEscovacao(false);
+		b2.setPorte(PorteAnimal.MINI);
+		b2.setObservacao("Ferida aberta na pata dianteira direita");
 		System.out.println("Banho - " + b2);
-		
+
 		Banho b3 = new Banho();
-		b3.escovacao = true;
-		b3.porte =  PorteAnimal.MEDIO;
-		b3.observacao = "Muito agitado";
+		b3.setCodigo(122);
+		b3.setValor(85);
+		b3.setNome("Banho & Tosa Higienica");
+		b3.setAnimal("Cão");
+		b3.setEscovacao(false);
+		b3.setPorte(PorteAnimal.MEDIO);
+		b3.setObservacao("Muito agitado");
 		System.out.println("Banho - " + b3);
 	}
 

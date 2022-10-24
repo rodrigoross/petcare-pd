@@ -1,12 +1,37 @@
 package br.edu.infnet.apppetshop.model.domain;
 
 public class Banho extends Servico {
-	public String observacao;
-	public boolean escovacao;
-	public PorteAnimal porte;
+	private String observacao;
+	private boolean escovacao;
+	private PorteAnimal porte;
 
 	@Override
 	public String toString() {
-		return porte + ";" + escovacao + ";" + observacao;
+		return super.toString() + ";" + porte + ";" + escovacao + ";" + observacao;
 	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
+	public boolean isEscovacao() {
+		return escovacao;
+	}
+
+	public void setEscovacao(boolean escovacao) {
+		this.escovacao = escovacao;
+	}
+
+	public PorteAnimal getPorte() {
+		return porte;
+	}
+
+	public void setPorte(PorteAnimal porte) {
+		this.porte = porte;
+	}
+	
 }
