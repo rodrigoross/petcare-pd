@@ -1,19 +1,20 @@
-package br.edu.infnet.apppetshop.model.test;
+package br.edu.infnet.apppetshop.controller;
 
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.stereotype.Component;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import br.edu.infnet.apppetshop.model.domain.Banho;
 import br.edu.infnet.apppetshop.model.domain.PorteAnimal;
 
-@Component
-public class BanhoTeste implements ApplicationRunner {
+@Controller
+public class BanhoController {
 
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("## Cadastro de Banhos ###################");
-
+	@GetMapping(value = "/banhos")
+	public String telabanho(Model model) {
 		Banho b1 = new Banho();
 		b1.setCodigo(123);
 		b1.setValor(90);
@@ -22,7 +23,6 @@ public class BanhoTeste implements ApplicationRunner {
 		b1.setEscovacao(true);
 		b1.setPorte(PorteAnimal.GRANDE);
 		b1.setObservacao("Alergia ao shampoo x");
-		System.out.println("> " + b1);
 
 		Banho b2 = new Banho();
 		b2.setCodigo(321);
@@ -32,8 +32,7 @@ public class BanhoTeste implements ApplicationRunner {
 		b2.setEscovacao(false);
 		b2.setPorte(PorteAnimal.MINI);
 		b2.setObservacao("Ferida aberta na pata dianteira direita");
-		System.out.println("> " + b2);
-
+		
 		Banho b3 = new Banho();
 		b3.setCodigo(122);
 		b3.setValor(85);
@@ -42,7 +41,15 @@ public class BanhoTeste implements ApplicationRunner {
 		b3.setEscovacao(false);
 		b3.setPorte(PorteAnimal.MEDIO);
 		b3.setObservacao("Muito agitado");
-		System.out.println("> " + b3);
+		
+		List<Banho> banhos = new ArrayList<Banho>();
+		banhos.add(b1);
+		banhos.add(b2);
+		banhos.add(b3);
+		
+		// atributo <- banhos;
+		model.addAttribute("lista", banhos);
+		
+		return "banho/lista";
 	}
-
 }

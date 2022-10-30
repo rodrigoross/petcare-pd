@@ -21,7 +21,7 @@ public class TosaTeste implements ApplicationRunner{
 		t1.setHigienica(false);
 		t1.setAparar(true);
 		t1.setEstilo("Garras curtas");
-		System.out.println("Tosa - " + t1);
+		System.out.println("> " + t1);
 		
 		Tosa t2 = new Tosa();
 		t2.setCodigo(987);
@@ -31,7 +31,7 @@ public class TosaTeste implements ApplicationRunner{
 		t2.setHigienica(true);
 		t2.setAparar(true);
 		t2.setEstilo("Rente");
-		System.out.println("Tosa - " + t2);
+		System.out.println("> " + t2);
 		
 		Tosa t3 = new Tosa();
 		t3.setCodigo(788);
@@ -41,7 +41,7 @@ public class TosaTeste implements ApplicationRunner{
 		t3.setHigienica(false);
 		t3.setAparar(false);
 		t3.setEstilo("Face redonda");
-		System.out.println("Tosa - " + t3);
+		System.out.println("> " + t3);
 	}
 
 }

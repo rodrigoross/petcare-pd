@@ -1,6 +1,7 @@
 package br.edu.infnet.apppetshop.model.domain;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Solicitacao {
 	private String descricao;
@@ -8,10 +9,21 @@ public class Solicitacao {
 	private int ordem;
 	private boolean busca;
 	private boolean entrega;
+	private Dono dono;
+	private List<Servico> servicos;
+	
+	public Solicitacao() {
+		data = LocalDateTime.now();
+		busca = false;
+	}
+	
+	public Solicitacao(Dono dono) {
+		this.dono = dono;
+	}
 
 	@Override
 	public String toString() {
-		return ordem + ";" + data + ";" + descricao + ";" + busca + ";" + entrega;
+		return ordem + ";" + data + ";" + descricao + ";" + busca + ";" + entrega + ";" + dono + ";" + servicos.size();
 	}
 
 	public String getDescricao() {
@@ -52,6 +64,22 @@ public class Solicitacao {
 
 	public void setEntrega(boolean entrega) {
 		this.entrega = entrega;
+	}
+
+	public Dono getDono() {
+		return dono;
+	}
+
+	public void setDono(Dono dono) {
+		this.dono = dono;
+	}
+
+	public List<Servico> getServicos() {
+		return servicos;
+	}
+
+	public void setServicos(List<Servico> servicos) {
+		this.servicos = servicos;
 	}
 	
 }
