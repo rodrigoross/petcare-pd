@@ -1,14 +1,23 @@
 package br.edu.infnet.apppetshop.model.domain;
 
 public abstract class Servico {
+	private Integer id;
 	private String nome;
 	private float valor;
 	private String animal;
 	private int codigo;
-	
+
 	@Override
 	public String toString() {
-		return codigo + ";" + animal + ";" + nome + ";" + valor; 
+		return id + ";" + codigo + ";" + animal + ";" + nome + ";" + valor;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -42,5 +51,4 @@ public abstract class Servico {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	
 }

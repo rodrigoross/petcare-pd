@@ -4,6 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.apppetshop.controller.TosaController;
 import br.edu.infnet.apppetshop.model.domain.Tosa;
 
 @Component
@@ -22,6 +23,7 @@ public class TosaTeste implements ApplicationRunner{
 		t1.setAparar(true);
 		t1.setEstilo("Garras curtas");
 		System.out.println("> " + t1);
+		TosaController.incluir(t1);
 		
 		Tosa t2 = new Tosa();
 		t2.setCodigo(987);
@@ -32,6 +34,7 @@ public class TosaTeste implements ApplicationRunner{
 		t2.setAparar(true);
 		t2.setEstilo("Rente");
 		System.out.println("> " + t2);
+		TosaController.incluir(t2);
 		
 		Tosa t3 = new Tosa();
 		t3.setCodigo(788);
@@ -42,6 +45,7 @@ public class TosaTeste implements ApplicationRunner{
 		t3.setAparar(false);
 		t3.setEstilo("Face redonda");
 		System.out.println("> " + t3);
+		TosaController.incluir(t3);
 	}
 
 }

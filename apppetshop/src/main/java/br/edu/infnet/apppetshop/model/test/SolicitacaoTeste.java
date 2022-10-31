@@ -7,6 +7,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.apppetshop.controller.SolicitacaoController;
 import br.edu.infnet.apppetshop.model.domain.Banho;
 import br.edu.infnet.apppetshop.model.domain.Consulta;
 import br.edu.infnet.apppetshop.model.domain.Dono;
@@ -88,6 +89,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		s1.setDono(d1);
 		s1.setServicos(servicosPrimeiraSolicitacao);
 		System.out.println(">  " + s1);
+		SolicitacaoController.incluir(s1);
 		
 		Solicitacao s2 = new Solicitacao();
 		s2.setOrdem(456);
@@ -97,6 +99,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		s2.setDono(d1);
 		s2.setServicos(servicoDemaisSolicitacoes);
 		System.out.println(">  " + s2);
+		SolicitacaoController.incluir(s2);
 		
 		Solicitacao s3 = new Solicitacao();
 		s3.setOrdem(789);
@@ -106,5 +109,6 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		s3.setDono(d2);
 		s3.setServicos(servicoDemaisSolicitacoes);
 		System.out.println(">  " + s3);
+		SolicitacaoController.incluir(s3);
 	}
 }

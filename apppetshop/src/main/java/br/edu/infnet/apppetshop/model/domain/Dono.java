@@ -1,6 +1,7 @@
 package br.edu.infnet.apppetshop.model.domain;
 
 public class Dono {
+	private Integer id;
 	private String nome;
 	private String telefone;
 	private String cpf;
@@ -8,6 +9,14 @@ public class Dono {
 	@Override
 	public String toString() {
 		return nome + ";" + telefone + ";" + cpf;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {

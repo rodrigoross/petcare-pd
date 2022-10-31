@@ -13,28 +13,37 @@
 <title>Cadastramento de Banhos</title>
 </head>
 <body>
-	<div class="container-fluid mt-3">
-		<h3>Banhos - ${lista.size()}</h3>
+	<div class="container mt-3">
+		<h3>Banhos</h3>
 
-		<div class="container my-2">
-			<table class="table table-bordered">
-				<thead>
+		<div class="my-2">
+			<table class="table table-striped table-bordered">
+				<thead class="table-light">
 					<tr>
+						<th scope="col">ID</th>
 						<th scope="col">Código</th>
 						<th scope="col">Animal</th>
 						<th scope="col">Nome</th>
 						<th scope="col">Porte</th>
 						<th scope="col">Observação</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="banho" items="${lista}">
 						<tr>
-							<th scope="row">${banho.codigo}</th>
+							<th scope="row">${banho.id}</th>
+							<td>${banho.codigo}</td>
 							<td>${banho.animal}</td>
 							<td>${banho.nome}</td>
 							<td>${banho.porte}</td>
 							<td>${banho.observacao}</td>
+							<td class="text-center">
+								<a class="btn btn-sm btn-danger"
+									href="/banhos/${banho.id}/excluir">
+									Excluir 
+								</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

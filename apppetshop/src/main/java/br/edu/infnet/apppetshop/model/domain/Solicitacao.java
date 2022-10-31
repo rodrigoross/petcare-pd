@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Solicitacao {
+	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
 	private int ordem;
@@ -24,6 +25,14 @@ public class Solicitacao {
 	@Override
 	public String toString() {
 		return ordem + ";" + data + ";" + descricao + ";" + busca + ";" + entrega + ";" + dono + ";" + servicos.size();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getDescricao() {
