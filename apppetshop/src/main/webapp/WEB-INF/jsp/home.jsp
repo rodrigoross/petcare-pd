@@ -43,9 +43,14 @@
 						<a class="nav-link" href="/tosas">Tosa</a>
 					</li>
 				</ul>
-				<span class="navbar-text"> Cuidando do seu pet </span>
+				<span class="navbar-text"> sempre cuidando do seu pet </span>
 			</div>
 		</div>
 	</nav>
+	<main>
+		<section class="container my-4">
+			// Conteudo aqui
+		</section>
+	</main>
 </body>
 </html>
