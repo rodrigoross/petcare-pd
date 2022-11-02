@@ -1,5 +1,10 @@
 package br.edu.infnet.apppetshop.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "banhos")
 public class Banho extends Servico {
 	private String observacao;
 	private boolean escovacao;
@@ -33,5 +38,5 @@ public class Banho extends Servico {
 	public void setPorte(PorteAnimal porte) {
 		this.porte = porte;
 	}
-	
+
 }

@@ -3,11 +3,12 @@ package br.edu.infnet.apppetshop.model.test;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppetshop.controller.SolicitacaoController;
 import br.edu.infnet.apppetshop.model.domain.Banho;
 import br.edu.infnet.apppetshop.model.domain.Consulta;
 import br.edu.infnet.apppetshop.model.domain.Dono;
@@ -15,10 +16,15 @@ import br.edu.infnet.apppetshop.model.domain.PorteAnimal;
 import br.edu.infnet.apppetshop.model.domain.Servico;
 import br.edu.infnet.apppetshop.model.domain.Solicitacao;
 import br.edu.infnet.apppetshop.model.domain.Tosa;
+import br.edu.infnet.apppetshop.model.service.SolicitacaoService;
 
+@Order(2)
 @Component
 public class SolicitacaoTeste implements ApplicationRunner {
-
+	
+	@Autowired
+	private SolicitacaoService solicitacaoService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("## Cadastro de solicitacoes ###################");
@@ -89,7 +95,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		s1.setDono(d1);
 		s1.setServicos(servicosPrimeiraSolicitacao);
 		System.out.println(">  " + s1);
-		SolicitacaoController.incluir(s1);
+		solicitacaoService.incluir(s1);
 		
 		Solicitacao s2 = new Solicitacao();
 		s2.setOrdem(456);
@@ -99,7 +105,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		s2.setDono(d1);
 		s2.setServicos(servicoDemaisSolicitacoes);
 		System.out.println(">  " + s2);
-		SolicitacaoController.incluir(s2);
+		solicitacaoService.incluir(s2);
 		
 		Solicitacao s3 = new Solicitacao();
 		s3.setOrdem(789);
@@ -109,6 +115,6 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		s3.setDono(d2);
 		s3.setServicos(servicoDemaisSolicitacoes);
 		System.out.println(">  " + s3);
-		SolicitacaoController.incluir(s3);
+		solicitacaoService.incluir(s3);
 	}
 }

@@ -1,5 +1,10 @@
 package br.edu.infnet.apppetshop.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "consultas")
 public class Consulta extends Servico {
 	private String raca;
 	private boolean vacina;

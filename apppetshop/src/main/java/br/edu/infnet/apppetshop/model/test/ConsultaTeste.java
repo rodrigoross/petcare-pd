@@ -1,15 +1,21 @@
 package br.edu.infnet.apppetshop.model.test;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppetshop.controller.ConsultaController;
 import br.edu.infnet.apppetshop.model.domain.Consulta;
+import br.edu.infnet.apppetshop.model.service.ConsultaService;
 
+@Order(5)
 @Component
 public class ConsultaTeste implements ApplicationRunner{
 
+	@Autowired
+	private ConsultaService consultaService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("## Cadastro de Consultas ###################");
@@ -23,8 +29,8 @@ public class ConsultaTeste implements ApplicationRunner{
 		c1.setPeso(4);
 		c1.setRaca("Yorkshire Terrier");
 		c1.setObservacao("já fez cirurgia");
-		System.out.println("Consulta - " + c1);
-		ConsultaController.incluir(c1);
+		System.out.println("> " + c1);
+		consultaService.incluir(c1);
 		
 		Consulta c2 = new Consulta();
 		c2.setCodigo(654);
@@ -35,8 +41,8 @@ public class ConsultaTeste implements ApplicationRunner{
 		c2.setPeso((float)1.5);
 		c2.setRaca("Pinscher");
 		c2.setObservacao("Idoso");
-		System.out.println("Consulta - " + c2);
-		ConsultaController.incluir(c2);
+		System.out.println("> " + c2);
+		consultaService.incluir(c2);
 		
 		Consulta c3 = new Consulta();
 		c3.setCodigo(655);
@@ -47,8 +53,8 @@ public class ConsultaTeste implements ApplicationRunner{
 		c3.setPeso((float) 2.450);
 		c3.setRaca("Pug");
 		c3.setObservacao("Espumando pelo nariz");
-		System.out.println("Consulta - " + c3);
-		ConsultaController.incluir(c3);
+		System.out.println("> " + c3);
+		consultaService.incluir(c3);
 		
 	}
 

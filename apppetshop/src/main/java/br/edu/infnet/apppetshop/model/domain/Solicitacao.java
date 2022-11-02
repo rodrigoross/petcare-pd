@@ -3,14 +3,28 @@ package br.edu.infnet.apppetshop.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "solicitacoes")
 public class Solicitacao {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
 	private int ordem;
 	private boolean busca;
 	private boolean entrega;
+	
+	@Transient
 	private Dono dono;
+	@Transient
 	private List<Servico> servicos;
 	
 	public Solicitacao() {

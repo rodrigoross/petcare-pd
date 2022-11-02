@@ -1,18 +1,24 @@
 package br.edu.infnet.apppetshop.model.test;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppetshop.controller.ServicoController;
 import br.edu.infnet.apppetshop.model.domain.Banho;
 import br.edu.infnet.apppetshop.model.domain.Consulta;
 import br.edu.infnet.apppetshop.model.domain.PorteAnimal;
 import br.edu.infnet.apppetshop.model.domain.Tosa;
+import br.edu.infnet.apppetshop.model.service.ServicoService;
 
+@Order(3)
 @Component
 public class ServicoTeste implements ApplicationRunner {
 
+	@Autowired
+	private ServicoService serviceServico;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("## Cadastro de serviços ###################");
@@ -25,8 +31,8 @@ public class ServicoTeste implements ApplicationRunner {
 		b1.setEscovacao(true);
 		b1.setPorte(PorteAnimal.GRANDE);
 		b1.setObservacao("Alergia ao shampoo x");
-		System.out.println("> Banho -" + b1);
-		ServicoController.incluir(b1);
+		System.out.println("> " + b1);
+		serviceServico.incluir(b1);
 		
 		Consulta c1 = new Consulta();
 		c1.setCodigo(456);
@@ -36,8 +42,8 @@ public class ServicoTeste implements ApplicationRunner {
 		c1.setVacina(false);;
 		c1.setPeso(4);
 		c1.setRaca("Yorkshire Terrier");
-		System.out.println("> Consulta - " + c1);
-		ServicoController.incluir(c1);
+		System.out.println("> " + c1);
+		serviceServico.incluir(c1);
 
 		Tosa t1 = new Tosa();
 		t1.setCodigo(789);
@@ -47,7 +53,7 @@ public class ServicoTeste implements ApplicationRunner {
 		t1.setHigienica(false);
 		t1.setAparar(true);
 		t1.setEstilo("Garras curtas");
-		System.out.println("> Tosa - " + t1);
-		ServicoController.incluir(t1);
+		System.out.println("> " + t1);
+		serviceServico.incluir(t1);
 	}
 }
