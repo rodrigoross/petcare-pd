@@ -29,9 +29,9 @@
 				<thead class="table-light">
 					<tr>
 						<th scope="col">ID</th>
-						<th scope="col">Código</th>
-						<th scope="col">Animal</th>
 						<th scope="col">Nome</th>
+						<th scope="col">Telefone</th>
+						<th scope="col">CPF</th>
 						<th></th>
 					</tr>
 				</thead>

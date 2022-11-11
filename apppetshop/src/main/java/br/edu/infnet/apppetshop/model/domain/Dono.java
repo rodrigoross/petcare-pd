@@ -1,11 +1,13 @@
 package br.edu.infnet.apppetshop.model.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +19,10 @@ public class Dono {
 	private String nome;
 	private String telefone;
 	private String cpf;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
 	
 	@ManyToOne
 	@JoinColumn(name="idUsuario") // id_usuario
@@ -33,6 +39,14 @@ public class Dono {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getNome() {

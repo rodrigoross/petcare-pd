@@ -12,7 +12,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<title>Cadastramento de serviços</title>
+<title>Serviços</title>
 
 </head>
 <body>

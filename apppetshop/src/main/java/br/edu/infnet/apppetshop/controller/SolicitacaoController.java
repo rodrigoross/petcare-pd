@@ -5,7 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
+import br.edu.infnet.apppetshop.model.domain.Solicitacao;
+import br.edu.infnet.apppetshop.model.domain.Usuario;
 import br.edu.infnet.apppetshop.model.service.SolicitacaoService;
 
 @Controller
@@ -28,7 +32,6 @@ public class SolicitacaoController {
 	@PostMapping(value = "/solicitacoes/incluir")
 	public String incluir(Solicitacao solicitacao, @SessionAttribute("autenticado") Usuario usuario) {
 		
-		solicitacao.setUsuario(usuario);
 		solicitacaoService.incluir(solicitacao);
 		
 		return "redirect:/solicitacoes";

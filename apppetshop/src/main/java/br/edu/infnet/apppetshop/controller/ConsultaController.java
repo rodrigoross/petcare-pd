@@ -5,7 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
+import br.edu.infnet.apppetshop.model.domain.Consulta;
+import br.edu.infnet.apppetshop.model.domain.Usuario;
 import br.edu.infnet.apppetshop.model.service.ConsultaService;
 
 @Controller
@@ -29,7 +33,6 @@ public class ConsultaController {
 	@PostMapping(value = "/consultas/incluir")
 	public String incluir(Consulta consulta, @SessionAttribute("autenticado") Usuario usuario) {
 		
-		consulta.setUsuario(usuario);
 		consultaService.incluir(consulta);
 		
 		return "redirect:/consultas";
