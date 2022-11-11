@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +17,10 @@ public class Dono {
 	private String nome;
 	private String telefone;
 	private String cpf;
+	
+	@ManyToOne
+	@JoinColumn(name="idUsuario") // id_usuario
+	private Usuario usuario;
 	
 	@Override
 	public String toString() {
@@ -51,6 +57,14 @@ public class Dono {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 }

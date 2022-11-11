@@ -21,8 +21,8 @@ public class UsuarioTeste implements ApplicationRunner {
 		System.out.println("## Cadastro de usuarios ##");
 		
 		Usuario u1 = new Usuario();
-		u1.setNome("Jurema da Silva");
-		u1.setEmail("juju@silva.com");
+		u1.setNome("Administrador");
+		u1.setEmail("admin@admin.com");
 		u1.setSenha("123456");
 		usuarioService.incluir(u1);
 	}

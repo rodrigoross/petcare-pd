@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +7,22 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<title>Cadastramento de donos</title>
+<title>Donos de Pet</title>
 
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/partials/menu.jsp"/>
-	
+	<c:import url="/WEB-INF/jsp/partials/menu.jsp" />
+
 	<div class="container mt-3">
-		<h3>Donos</h3>
+		<div class="d-flex justify-content-between">
+			<h3>Donos</h3>
+
+			<a href="/donos/incluir" class="btn btn-dark"> Novo </a>
+		</div>
 
 		<div class="my-2">
 			<table class="table table-striped table-bordered">

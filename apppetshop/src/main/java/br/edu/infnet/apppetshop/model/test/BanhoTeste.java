@@ -10,7 +10,7 @@ import br.edu.infnet.apppetshop.model.domain.Banho;
 import br.edu.infnet.apppetshop.model.domain.PorteAnimal;
 import br.edu.infnet.apppetshop.model.service.BanhoService;
 
-@Order(4)
+@Order(5)
 @Component
 public class BanhoTeste implements ApplicationRunner {
 
@@ -29,8 +29,8 @@ public class BanhoTeste implements ApplicationRunner {
 		b1.setEscovacao(true);
 		b1.setPorte(PorteAnimal.GRANDE);
 		b1.setObservacao("Alergia ao shampoo x");
-		System.out.println("> " + b1);
 		banhoService.incluir(b1);
+		System.out.println("> " + b1);
 
 		Banho b2 = new Banho();
 		b2.setCodigo(321);
@@ -40,8 +40,8 @@ public class BanhoTeste implements ApplicationRunner {
 		b2.setEscovacao(false);
 		b2.setPorte(PorteAnimal.MINI);
 		b2.setObservacao("Ferida aberta na pata dianteira direita");
-		System.out.println("> " + b2);
 		banhoService.incluir(b2);
+		System.out.println("> " + b2);
 		
 		Banho b3 = new Banho();
 		b3.setCodigo(122);
@@ -51,8 +51,8 @@ public class BanhoTeste implements ApplicationRunner {
 		b3.setEscovacao(false);
 		b3.setPorte(PorteAnimal.MEDIO);
 		b3.setObservacao("Muito agitado");
-		System.out.println("> " + b3);
 		banhoService.incluir(b3);
+		System.out.println("> " + b3);
 	}
 
 }

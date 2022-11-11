@@ -18,7 +18,7 @@ import br.edu.infnet.apppetshop.model.domain.Solicitacao;
 import br.edu.infnet.apppetshop.model.domain.Tosa;
 import br.edu.infnet.apppetshop.model.service.SolicitacaoService;
 
-@Order(2)
+@Order(4)
 @Component
 public class SolicitacaoTeste implements ApplicationRunner {
 	
@@ -27,17 +27,19 @@ public class SolicitacaoTeste implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("## Cadastro de solicitacoes ###################");
+		System.out.println("## Cadastro de solicitacoes ##");
 		
 		//-------------------------------------
 		// Inicialização dos objetos Dono
 		//-------------------------------------
 		Dono d1 = new Dono();
+		d1.setId(1);
 		d1.setNome("Jurema da Silva");
 		d1.setCpf("77522553008");
 		d1.setTelefone("+5565981726586");
 		
 		Dono d2 = new Dono();
+		d2.setId(2);
 		d2.setNome("Baltazar dos Santos");
 		d2.setCpf("75459728053");
 		d2.setTelefone("+5565972816586");
@@ -46,6 +48,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		// Serviços
 		//-------------------------------------
 		Banho banho = new Banho();
+		banho.setId(1);
 		banho.setCodigo(123);
 		banho.setValor(90);
 		banho.setNome("Banho & Tosa");
@@ -55,6 +58,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		banho.setObservacao("Alergia ao shampoo x");
 		
 		Consulta consulta = new Consulta();
+		consulta.setId(2);
 		consulta.setCodigo(456);
 		consulta.setValor(75);
 		consulta.setNome("Consulta rotineira");
@@ -64,6 +68,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		consulta.setRaca("Yorkshire Terrier");
 
 		Tosa tosa = new Tosa();
+		tosa.setId(3);
 		tosa.setCodigo(789);
 		tosa.setValor(25);
 		tosa.setNome("Aparar garras");

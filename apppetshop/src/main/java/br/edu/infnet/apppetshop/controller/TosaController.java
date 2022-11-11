@@ -20,8 +20,22 @@ public class TosaController {
 		return "tosa/lista";
 	}
 
+	@GetMapping(value = "/tosas/incluir")
+	public String telaCadastro() {
+		return "tosa/cadastro";
+	}
+	
+	@PostMapping(value = "/tosas/incluir")
+	public String incluir(Tosa tosa, @SessionAttribute("autenticado") Usuario usuario) {
+		
+		tosa.setUsuario(usuario);
+		tosaService.incluir(tosa);
+		
+		return "redirect:/tosas";
+	}
+
 	@GetMapping(value = "/tosas/{id}/excluir")
-	public String excluirBanho(@PathVariable Integer id) {
+	public String excluirTosa(@PathVariable Integer id) {
 		tosaService.remover(id);
 		
 		return "redirect:/tosas";

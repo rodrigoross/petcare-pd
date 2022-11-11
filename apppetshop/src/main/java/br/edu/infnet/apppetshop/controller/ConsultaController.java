@@ -21,8 +21,22 @@ public class ConsultaController {
 		return "consulta/lista";
 	}
 	
+@GetMapping(value = "/consultas/incluir")
+	public String telaCadastro() {
+		return "consulta/cadastro";
+	}
+	
+	@PostMapping(value = "/consultas/incluir")
+	public String incluir(Consulta consulta, @SessionAttribute("autenticado") Usuario usuario) {
+		
+		consulta.setUsuario(usuario);
+		consultaService.incluir(consulta);
+		
+		return "redirect:/consultas";
+	}
+
 	@GetMapping(value = "/consultas/{id}/excluir")
-	public String excluirBanho(@PathVariable Integer id) {
+	public String excluirConsulta(@PathVariable Integer id) {
 		consultaService.remover(id);
 		
 		return "redirect:/consultas";

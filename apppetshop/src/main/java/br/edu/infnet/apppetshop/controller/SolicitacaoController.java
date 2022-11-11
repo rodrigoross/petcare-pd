@@ -19,9 +19,23 @@ public class SolicitacaoController {
 		
 		return "solicitacao/lista";
 	}
+
+	@GetMapping(value = "/solicitacoes/incluir")
+	public String telaCadastro() {
+		return "solicitacao/cadastro";
+	}
+	
+	@PostMapping(value = "/solicitacoes/incluir")
+	public String incluir(Solicitacao solicitacao, @SessionAttribute("autenticado") Usuario usuario) {
+		
+		solicitacao.setUsuario(usuario);
+		solicitacaoService.incluir(solicitacao);
+		
+		return "redirect:/solicitacoes";
+	}
 	
 	@GetMapping(value = "/solicitacoes/{id}/excluir")
-	public String excluirBanho(@PathVariable Integer id) {
+	public String excluirSolicitacao(@PathVariable Integer id) {
 		solicitacaoService.remover(id);
 		
 		return "redirect:/solicitacoes";

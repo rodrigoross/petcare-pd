@@ -21,6 +21,20 @@ public class BanhoController {
 		return "banho/lista";
 	}
 	
+	@GetMapping(value = "/banhos/incluir")
+	public String telaCadastro() {
+		return "banho/cadastro";
+	}
+	
+	@PostMapping(value = "/banhos/incluir")
+	public String incluir(Banho banho, @SessionAttribute("autenticado") Usuario usuario) {
+		
+		banho.setUsuario(usuario);
+		banhoService.incluir(banho);
+		
+		return "redirect:/banhos";
+	}
+
 	@GetMapping(value = "/banhos/{id}/excluir")
 	public String excluirBanho(@PathVariable Integer id) {
 		banhoService.remover(id);
