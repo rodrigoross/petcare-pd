@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.apppetshop.model.domain.Dono;
+import br.edu.infnet.apppetshop.model.domain.Solicitacao;
 import br.edu.infnet.apppetshop.model.domain.Usuario;
 import br.edu.infnet.apppetshop.model.repository.DonoRepository;
 
@@ -28,5 +29,9 @@ public class DonoService {
 	
 	public Collection<Dono> obterListaUsuario(Usuario usuario){
 		return (Collection<Dono>) donoRepository.obterLista(usuario.getId());
+	}
+	
+	public Collection<Solicitacao> obterListaSolicitacao(Dono dono){
+		return (Collection<Solicitacao>) donoRepository.obterSolicitacoesDono(dono.getId());
 	}
 }

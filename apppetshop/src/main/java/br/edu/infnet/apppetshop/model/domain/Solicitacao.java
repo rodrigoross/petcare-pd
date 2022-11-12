@@ -1,16 +1,18 @@
 package br.edu.infnet.apppetshop.model.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name = "solicitacoes")
@@ -20,20 +22,23 @@ public class Solicitacao {
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
-	private int ordem;
+	private String ordem;
 	private boolean busca;
 	private boolean entrega;
 	
-	@ManyToOne
+	@OneToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name="idDono")
 	private Dono dono;
 	
-	@Transient
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Servico> servicos;
 	
 	public Solicitacao() {
 		data = LocalDateTime.now();
 		busca = false;
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdHHmm");
+		ordem = data.format(formatter);
 	}
 	
 	public Solicitacao(Dono dono) {
@@ -69,11 +74,11 @@ public class Solicitacao {
 		this.data = data;
 	}
 
-	public int getOrdem() {
+	public String getOrdem() {
 		return ordem;
 	}
 
-	public void setOrdem(int ordem) {
+	public void setOrdem(String ordem) {
 		this.ordem = ordem;
 	}
 

@@ -1,11 +1,14 @@
 package br.edu.infnet.apppetshop.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,9 @@ public abstract class Servico {
 	private float valor;
 	private String animal;
 	private int codigo;
+	
+	@ManyToMany(mappedBy = "servicos")
+	private List<Solicitacao> solicitacoes;
 
 	@Override
 	public String toString() {

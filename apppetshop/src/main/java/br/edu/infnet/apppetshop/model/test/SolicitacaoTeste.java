@@ -93,7 +93,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		// Solicitações
 		//-------------------------------------
 		Solicitacao s1 = new Solicitacao();
-		s1.setOrdem(123);
+		s1.setOrdem("123");
 		s1.setBusca(false);
 		s1.setEntrega(false);
 		s1.setDescricao("Solicitacao 1");
@@ -103,7 +103,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		solicitacaoService.incluir(s1);
 		
 		Solicitacao s2 = new Solicitacao();
-		s2.setOrdem(456);
+		s2.setOrdem("456");
 		s2.setBusca(true);
 		s2.setEntrega(false);
 		s2.setDescricao("Solicitacao 2");
@@ -113,7 +113,7 @@ public class SolicitacaoTeste implements ApplicationRunner {
 		solicitacaoService.incluir(s2);
 		
 		Solicitacao s3 = new Solicitacao();
-		s3.setOrdem(789);
+		s3.setOrdem("789");
 		s3.setBusca(false);
 		s3.setEntrega(true);
 		s3.setDescricao("Solicitacao 3");

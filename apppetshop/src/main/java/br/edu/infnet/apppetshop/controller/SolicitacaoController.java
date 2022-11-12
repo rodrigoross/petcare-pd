@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.apppetshop.model.domain.Solicitacao;
 import br.edu.infnet.apppetshop.model.domain.Usuario;
+import br.edu.infnet.apppetshop.model.service.DonoService;
+import br.edu.infnet.apppetshop.model.service.ServicoService;
 import br.edu.infnet.apppetshop.model.service.SolicitacaoService;
 
 @Controller
@@ -17,6 +19,12 @@ public class SolicitacaoController {
 	@Autowired
 	private SolicitacaoService solicitacaoService;
 
+	@Autowired
+	private DonoService donoService;
+	
+	@Autowired
+	private ServicoService servicoService;
+	
 	@GetMapping(value = "/solicitacoes")
 	public String telaSolicitacoes(Model model) {
 		model.addAttribute("lista", solicitacaoService.obterLista());
@@ -25,7 +33,11 @@ public class SolicitacaoController {
 	}
 
 	@GetMapping(value = "/solicitacoes/incluir")
-	public String telaCadastro() {
+	public String telaCadastro(Model model, @SessionAttribute("autenticado") Usuario autenticado) {
+		
+		model.addAttribute("donos", donoService.obterListaUsuario(autenticado));
+		model.addAttribute("servicos", servicoService.obterLista());
+		
 		return "solicitacao/cadastro";
 	}
 	
