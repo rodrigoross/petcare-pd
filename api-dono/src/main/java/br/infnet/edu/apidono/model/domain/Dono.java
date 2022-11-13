@@ -1,4 +1,4 @@
-package br.edu.infnet.apppetshop.model.domain;
+package br.infnet.edu.apidono.model.domain;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -18,7 +18,7 @@ public class Dono {
 	private String nome;
 	private String telefone;
 	private String cpf;
-	
+		
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idEndereco")
 	private Endereco endereco;

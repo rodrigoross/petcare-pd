@@ -1,29 +1,33 @@
-package br.edu.infnet.apppetshop.model.service;
+package br.infnet.edu.apidono.model.service;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.infnet.apppetshop.clients.IDonoClient;
-import br.edu.infnet.apppetshop.model.domain.Dono;
+import br.infnet.edu.apidono.model.domain.Dono;
+import br.infnet.edu.apidono.model.repository.DonoRepository;
 
 @Service
 public class DonoService {
 	
 	@Autowired
-	private IDonoClient donoClient;
+	private DonoRepository donoRepository;
 	
 	public void incluir(Dono dono) {
-		donoClient.incluir(dono);
+		donoRepository.save(dono);
 	}
 
 	public void remover(Integer id) {
-		donoClient.excluir(id);
+		donoRepository.deleteById(id);
 	}
 	
-	public Collection<Dono> obterLista(){
-		return (Collection<Dono>) donoClient.obterLista();
+	public List<Dono> obterLista(){
+		return (List<Dono>) donoRepository.findAll();
+	}
+	
+	public Dono carregarDono(Integer id){
+		return donoRepository.buscarDonoPorId(id);
 	}
 	
 	//public Collection<Dono> obterListaUsuario(Usuario usuario){

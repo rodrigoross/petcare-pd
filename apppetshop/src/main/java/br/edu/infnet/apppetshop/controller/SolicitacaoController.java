@@ -35,7 +35,7 @@ public class SolicitacaoController {
 	@GetMapping(value = "/solicitacoes/incluir")
 	public String telaCadastro(Model model, @SessionAttribute("autenticado") Usuario autenticado) {
 		
-		model.addAttribute("donos", donoService.obterListaUsuario(autenticado));
+		model.addAttribute("donos", donoService.obterLista());
 		model.addAttribute("servicos", servicoService.obterLista());
 		
 		return "solicitacao/cadastro";

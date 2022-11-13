@@ -1,13 +1,9 @@
 package br.edu.infnet.apppetshop.model.domain;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,9 +16,9 @@ public class Usuario {
 	private String email;
 	private String senha;
 	
-	@OneToMany
-	@JoinColumn(name="idUsuario") // id_usuario
-	private List<Dono> donos;
+	//@OneToMany
+	//@JoinColumn(name="idUsuario") // id_usuario
+	//private List<Dono> donos;
 	
 	@Override
 	public String toString() {
@@ -61,13 +57,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public List<Dono> getDonos() {
-		return donos;
-	}
+	//public List<Dono> getDonos() {
+	//	return donos;
+	//}
 
-	public void setDonos(List<Dono> donos) {
-		this.donos = donos;
-	}
-
-	
+	//public void setDonos(List<Dono> donos) {
+	//	this.donos = donos;
+	//}
 }

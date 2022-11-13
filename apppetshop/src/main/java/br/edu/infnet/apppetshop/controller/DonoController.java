@@ -25,7 +25,7 @@ public class DonoController {
 	
 	@GetMapping(value = "/donos")
 	public String telaDonos(Model model, @SessionAttribute("autenticado") Usuario usuario) {
-		model.addAttribute("lista", donoService.obterListaUsuario(usuario));
+		model.addAttribute("lista", donoService.obterLista());
 		
 		return "dono/lista";
 	}
@@ -38,7 +38,6 @@ public class DonoController {
 	@PostMapping(value = "/donos/incluir")
 	public String incluir(Dono dono, @SessionAttribute("autenticado") Usuario usuario) {
 		
-		dono.setUsuario(usuario); 
 		donoService.incluir(dono);
 		
 		return "redirect:/donos";
