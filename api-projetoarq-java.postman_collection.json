@@ -1,0 +1,631 @@
+{
+	"info": {
+		"_postman_id": "3404784f-443e-47d8-b0b3-9bf17219898d",
+		"name": "api-projetoarq-java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3792430"
+	},
+	"item": [
+		{
+			"name": "api-usuario",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{USUARIO_URL}}",
+							"host": [
+								"{{USUARIO_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Jurema dos testes\",\r\n    \"email\": \"juju@juju.com\",\r\n    \"senha\": \"senha123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USUARIO_URL}}/incluir",
+							"host": [
+								"{{USUARIO_URL}}"
+							],
+							"path": [
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{USUARIO_URL}}/2/excluir",
+							"host": [
+								"{{USUARIO_URL}}"
+							],
+							"path": [
+								"2",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{USUARIO_URL}}/login?email=admin@admin.com&senha=123456",
+							"host": [
+								"{{USUARIO_URL}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@admin.com"
+								},
+								{
+									"key": "senha",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-dono",
+			"item": [
+				{
+					"name": "Listar donos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DONO_URL}}",
+							"host": [
+								"{{DONO_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Visualizar dono",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DONO_URL}}/6/visualizar",
+							"host": [
+								"{{DONO_URL}}"
+							],
+							"path": [
+								"6",
+								"visualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir dono",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pedrinho\",\r\n    \"telefone\": \"+5565978785454\",\r\n    \"cpf\": \"12345678921\",\r\n    \"endereco\": {\r\n        \"cep\": \"88888-999\",\r\n        \"logradouro\": \"Rua teste\",\r\n        \"complemento\": \"Complemento teste\",\r\n        \"bairro\": \"Bairro teste\",\r\n        \"localidade\": \"Localidade teste\",\r\n        \"uf\": \"RJ\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DONO_URL}}/incluir",
+							"host": [
+								"{{DONO_URL}}"
+							],
+							"path": [
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir dono",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{DONO_URL}}/5/excluir",
+							"host": [
+								"{{DONO_URL}}"
+							],
+							"path": [
+								"5",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-servico",
+			"item": [
+				{
+					"name": "Banhos",
+					"item": [
+						{
+							"name": "Listar serviços de banho",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/banhos",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"banhos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Incluir serviço de banho",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"animal\": \"Cão\",\r\n    \"codigo\": 963,\r\n    \"nome\": \"Banho teste\",\r\n    \"valor\": 75.25,\r\n    \"porte\": \"MEDIO\",\r\n    \"escovacao\": true,\r\n    \"observacao\": \"Aplicação de perfume\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICO_URL}}/banhos/incluir",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"banhos",
+										"incluir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visualizar banho",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/banhos/4/visualizar",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"banhos",
+										"4",
+										"visualizar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Excluir serviço de banho",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/banhos/4/excluir",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"banhos",
+										"4",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consultas",
+					"item": [
+						{
+							"name": "Listar serviços de consulta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/consultas",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"consultas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Incluir serviço de consulta",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"animal\": \"Gato\",\r\n    \"codigo\": 741,\r\n    \"nome\": \"Consulta teste\",\r\n    \"valor\": 200.00,\r\n    \"raca\": \"Gato Azul Russo\",\r\n    \"vacina\": false,\r\n    \"peso\": 4.25,\r\n    \"observacao\": \"Obesidade\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICO_URL}}/consultas/incluir",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"consultas",
+										"incluir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visualizar consulta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/consultas/7/visualizar",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"consultas",
+										"7",
+										"visualizar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Excluir serviço de consulta",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/consultas/7/excluir",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"consultas",
+										"7",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tosas",
+					"item": [
+						{
+							"name": "Listar serviços de tosa",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/tosas",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"tosas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Incluir serviço de tosa",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"animal\": \"Cão\",\r\n    \"codigo\": 852,\r\n    \"nome\": \"Tosa teste\",\r\n    \"valor\": 99.00,\r\n    \"estilo\": \"Padrão ISO-9001\",\r\n    \"higienica\": false,\r\n    \"aparar\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVICO_URL}}/tosas/incluir",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"tosas",
+										"incluir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Visualizar tosa",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/tosas/10/visualizar",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"tosas",
+										"10",
+										"visualizar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Excluir serviço de tosa",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{SERVICO_URL}}/tosas/10/excluir",
+									"host": [
+										"{{SERVICO_URL}}"
+									],
+									"path": [
+										"tosas",
+										"10",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar serviços",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVICO_URL}}",
+							"host": [
+								"{{SERVICO_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir serviço",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{SERVICO_URL}}/1/excluir",
+							"host": [
+								"{{SERVICO_URL}}"
+							],
+							"path": [
+								"1",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir serviço (NÃO UTILIZAR)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"animal\": \"Camundongo\",\r\n    \"codigo\": 753,\r\n    \"nome\": \"Servico teste\",\r\n    \"valor\": 100.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVICO_URL}}/incluir",
+							"host": [
+								"{{SERVICO_URL}}"
+							],
+							"path": [
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-solicitacao",
+			"item": [
+				{
+					"name": "Listar solicitacoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SOLICITACAO_URL}}",
+							"host": [
+								"{{SOLICITACAO_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Visualizar solicitação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SOLICITACAO_URL}}/1/visualizar",
+							"host": [
+								"{{SOLICITACAO_URL}}"
+							],
+							"path": [
+								"1",
+								"visualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir solicitacao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ordem\": \"101\",\r\n    \"descricao\": \"Solicitacao via API - TESTE\",\r\n    \"busca\": false,\r\n    \"entrega\": true,\r\n    \"idDono\": \"1\",\r\n    \"servicos\": [\r\n        1,4,7\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SOLICITACAO_URL}}/incluir",
+							"host": [
+								"{{SOLICITACAO_URL}}"
+							],
+							"path": [
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir solicitacao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{SOLICITACAO_URL}}/5/excluir",
+							"host": [
+								"{{SOLICITACAO_URL}}"
+							],
+							"path": [
+								"5",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "USUARIO_URL",
+			"value": "http://localhost:8081/api/usuarios",
+			"type": "string"
+		},
+		{
+			"key": "DONO_URL",
+			"value": "http://localhost:8082/api/donos",
+			"type": "string"
+		},
+		{
+			"key": "SERVICO_URL",
+			"value": "http://localhost:8083/api/servicos",
+			"type": "string"
+		},
+		{
+			"key": "SOLICITACAO_URL",
+			"value": "http://localhost:8084/api/solicitacoes",
+			"type": "string"
+		}
+	]
+}
