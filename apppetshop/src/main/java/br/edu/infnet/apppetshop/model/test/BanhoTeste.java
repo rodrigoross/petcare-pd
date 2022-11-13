@@ -10,7 +10,7 @@ import br.edu.infnet.apppetshop.model.domain.Banho;
 import br.edu.infnet.apppetshop.model.domain.PorteAnimal;
 import br.edu.infnet.apppetshop.model.service.BanhoService;
 
-@Order(5)
+@Order(3)
 @Component
 public class BanhoTeste implements ApplicationRunner {
 

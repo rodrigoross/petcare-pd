@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.apppetshop.model.domain.Consulta;
 import br.edu.infnet.apppetshop.model.service.ConsultaService;
 
-@Order(6)
+@Order(4)
 @Component
 public class ConsultaTeste implements ApplicationRunner{
 

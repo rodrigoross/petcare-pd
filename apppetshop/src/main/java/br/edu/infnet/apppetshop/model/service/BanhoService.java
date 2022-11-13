@@ -1,27 +1,28 @@
 package br.edu.infnet.apppetshop.model.service;
 
 import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apppetshop.clients.IServicoClient;
 import br.edu.infnet.apppetshop.model.domain.Banho;
-import br.edu.infnet.apppetshop.model.repository.BanhoRepository;
 
 @Service
 public class BanhoService {
 	@Autowired
-	private BanhoRepository banhoRepository;
+	private IServicoClient servicoClient;
 	
 	public void incluir(Banho banho) {
-		banhoRepository.save(banho);
+		servicoClient.incluirBanho(banho);
 	}
 
 	public void remover(Integer id) {
-		banhoRepository.deleteById(id);
+		servicoClient.excluirBanho(id);
 	}
 	
 	public Collection<Banho> obterLista(){
-		return (Collection<Banho>) banhoRepository.findAll();
+		return (Collection<Banho>) servicoClient.obterListaBanho();
 	}
 	
 }

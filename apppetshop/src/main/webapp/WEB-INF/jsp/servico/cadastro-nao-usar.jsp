@@ -21,20 +21,25 @@
 	<div class="container mt-3">
 		<h2>Novo cadastro</h2>
 		<form action="/servicos/incluir" method="post">
-			<div class="mb-3">
-				<label for="nome" class="form-label">Nome</label>
-				<input type="text"
-					class="form-control" id="nome" name="nome" aria-describedby="nomeHelp">
+			<div class="form-group">
+				<label for="nome" class="form-label">Nome</label> <input
+					class="form-control" placeholder="Nome do serviço" name="nome" />
 			</div>
-			<div class="mb-3">
-				<label for="email" class="form-label">E-mail</label> <input
-					type="email" class="form-control" id="email" name="email"
-					aria-describedby="emailHelp">
-				<div id="emailHelp" class="form-text">Seu e-mail estará seguro conosco.</div>
+
+			<div class="form-group mb-3">
+				<label for="animal" class="form-label">Animal</label> <select
+					name="animal" id="animal" class="form-select">
+					<option value="Cão">Cão</option>
+					<option value="Gato">Gato</option>
+					<option value="Camundongo">Camundongo</option>
+					<option value="Pássaro">Pássaro</option>
+				</select>
 			</div>
+
 			<div class="mb-3">
-				<label for="senha" class="form-label">Senha</label> <input
-					type="password" class="form-control" id="senha" name="senha">
+				<label for="valor" class="form-label">Valor</label> <input
+					type="number" min="0" step="1" class="form-control" id="valor"
+					name="valor">
 			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>

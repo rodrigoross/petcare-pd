@@ -5,23 +5,23 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apppetshop.clients.IServicoClient;
 import br.edu.infnet.apppetshop.model.domain.Consulta;
-import br.edu.infnet.apppetshop.model.repository.ConsultaRepository;
 
 @Service
 public class ConsultaService {
 	@Autowired
-	private ConsultaRepository consultaRepository;
+	private IServicoClient servicoClient;
 	
 	public void incluir(Consulta consulta) {
-		consultaRepository.save(consulta);
+		servicoClient.incluirConsulta(consulta);
 	}
 
 	public void remover(Integer id) {
-		consultaRepository.deleteById(id);
+		servicoClient.excluirConsulta(id);
 	}
 	
 	public Collection<Consulta> obterLista(){
-		return (Collection<Consulta>) consultaRepository.findAll();
+		return (Collection<Consulta>) servicoClient.obterListaConsulta();
 	}
 }

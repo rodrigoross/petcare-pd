@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.apppetshop.model.domain.Tosa;
 import br.edu.infnet.apppetshop.model.service.TosaService;
 
-@Order(7)
+@Order(6)
 @Component
 public class TosaTeste implements ApplicationRunner{
 

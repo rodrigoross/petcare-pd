@@ -18,7 +18,7 @@ import br.edu.infnet.apppetshop.model.domain.Solicitacao;
 import br.edu.infnet.apppetshop.model.domain.Tosa;
 import br.edu.infnet.apppetshop.model.service.SolicitacaoService;
 
-@Order(4)
+@Order(7)
 @Component
 public class SolicitacaoTeste implements ApplicationRunner {
 	

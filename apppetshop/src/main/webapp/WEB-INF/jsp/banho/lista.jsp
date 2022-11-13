@@ -17,7 +17,11 @@
 	<c:import url="/WEB-INF/jsp/partials/menu.jsp"/>
 
 	<div class="container mt-3">
-		<h3>Banhos</h3>
+		<div class="d-flex justify-content-between">
+			<h3>Banhos</h3>
+
+			<a href="/banhos/incluir" class="btn btn-dark"> Novo </a>
+		</div>
 
 		<div class="my-2">
 			<table class="table table-striped table-bordered">

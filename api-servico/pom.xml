@@ -8,14 +8,15 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.infnet.edu</groupId>
-	<artifactId>api-dono</artifactId>
+	<artifactId>api-servico</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-dono</name>
-	<description>API para controle de donos de animais de estimacao</description>
+	<name>api-servico</name>
+	<description>API para controle de serviços disponibilizados no petshop</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>

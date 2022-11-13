@@ -5,24 +5,24 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apppetshop.clients.IServicoClient;
 import br.edu.infnet.apppetshop.model.domain.Tosa;
-import br.edu.infnet.apppetshop.model.repository.TosaRepository;
 
 @Service
 public class TosaService {
 	@Autowired
-	private TosaRepository tosaRepository;
+	private IServicoClient servicoClient;
 	
 	public void incluir(Tosa tosa) {
-		tosaRepository.save(tosa);
+		servicoClient.incluirTosa(tosa);
 	}
 
 	public void remover(Integer id) {
-		tosaRepository.deleteById(id);
+		servicoClient.excluirTosa(id);
 	}
 	
 	public Collection<Tosa> obterLista(){
-		return (Collection<Tosa>) tosaRepository.findAll();
+		return (Collection<Tosa>) servicoClient.obterListaTosa();
 	}
 	
 }

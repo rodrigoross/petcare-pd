@@ -5,24 +5,25 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apppetshop.clients.IServicoClient;
 import br.edu.infnet.apppetshop.model.domain.Servico;
-import br.edu.infnet.apppetshop.model.repository.ServicoRepository;
 
 @Service
 public class ServicoService {
+
 	@Autowired
-	private ServicoRepository servicoRepository;
-	
+	private IServicoClient servicoClient;
+
 	public void incluir(Servico servico) {
-		servicoRepository.save(servico);
+		servicoClient.incluir(servico);
 	}
 
 	public void remover(Integer id) {
-		servicoRepository.deleteById(id);
+		servicoClient.excluir(id);
 	}
-	
-	public Collection<Servico> obterLista(){
-		return (Collection<Servico>) servicoRepository.findAll();
+
+	public Collection<Servico> obterLista() {
+		return (Collection<Servico>) servicoClient.obterLista();
 	}
-	
+
 }

@@ -32,7 +32,7 @@ public class BanhoController {
 	
 	@PostMapping(value = "/banhos/incluir")
 	public String incluir(Banho banho, @SessionAttribute("autenticado") Usuario usuario) {
-		
+	
 		banhoService.incluir(banho);
 		
 		return "redirect:/banhos";

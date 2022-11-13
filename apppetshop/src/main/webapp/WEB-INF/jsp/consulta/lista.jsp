@@ -18,7 +18,11 @@
 	<c:import url="/WEB-INF/jsp/partials/menu.jsp"/>
 	
 	<div class="container mt-3">
-		<h3>Consultas</h3>
+		<div class="d-flex justify-content-between">
+			<h3>Consultas</h3>
+
+			<a href="/consultas/incluir" class="btn btn-dark"> Novo </a>
+		</div>
 
 		<div class="container my-2">
 			<table class="table table-bordered table-striped">
