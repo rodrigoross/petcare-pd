@@ -17,7 +17,7 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 	
 	@GetMapping(value = "/usuarios")
-	public String telaDonos(Model model) {
+	public String telaUsuarios(Model model) {
 		model.addAttribute("lista", usuarioService.obterLista());
 		
 		return "usuario/lista";
@@ -37,7 +37,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping(value = "/usuarios/{id}/excluir")
-	public String excluirBanho(@PathVariable Integer id) {
+	public String excluirUsuario(@PathVariable Integer id) {
 		usuarioService.remover(id);
 		
 		return "redirect:/usuarios";

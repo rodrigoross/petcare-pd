@@ -1,9 +1,9 @@
-package br.edu.infnet.apppetshop.model.repository;
+package br.infnet.edu.apiusuario.model.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import br.edu.infnet.apppetshop.model.domain.Usuario;
+import br.infnet.edu.apiusuario.model.domain.Usuario;
 
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
